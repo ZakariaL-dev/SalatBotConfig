@@ -2,7 +2,7 @@ const TelegramBot = require("node-telegram-bot-api");
 const axios = require("axios");
 const cron = require("node-cron");
 
-const TOKEN = process.env.TOKEN_Bot;
+const TOKEN = process.env.BOT_TOKEN;
 const bot = new TelegramBot(TOKEN, { polling: true });
 const MY_CHAT_ID = process.env.MY_CHAT_ID; // الـ ID الخاص بك
 
