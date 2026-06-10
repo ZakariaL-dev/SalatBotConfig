@@ -3,7 +3,15 @@ const axios = require("axios");
 const cron = require("node-cron");
 
 const TOKEN = process.env.BOT_TOKEN;
-const bot = new TelegramBot(TOKEN, { polling: true });
+const bot = new TelegramBot(TOKEN, {
+  polling: {
+    interval: 300,
+    autoStart: true,
+    params: {
+      timeout: 10,
+    },
+  },
+});
 const MY_CHAT_ID = process.env.MY_CHAT_ID; // الـ ID الخاص بك
 
 async function getPrayerTimes() {
