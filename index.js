@@ -2,9 +2,9 @@ const TelegramBot = require("node-telegram-bot-api");
 const axios = require("axios");
 const cron = require("node-cron");
 
-const TOKEN = "8611246229:AAEBqVYtLxXa9mUrWgfhPW77kQhbcucvf_c";
+const TOKEN = process.env.TOKEN_Bot;
 const bot = new TelegramBot(TOKEN, { polling: true });
-const MY_CHAT_ID = "6292904061"; // الـ ID الخاص بك
+const MY_CHAT_ID = process.env.MY_CHAT_ID; // الـ ID الخاص بك
 
 async function getPrayerTimes() {
   try {
